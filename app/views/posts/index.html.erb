@@ -1,39 +1,45 @@
-<%= render 'menu' %>
+<div class="users index">
 
-<div class="col-md-9">
-    <h2> お知らせ一覧</h2>
-     
-    <p><%= link_to '新規追加', new_post_path, :method=>:get , class: "btn btn-default" %></p>
-     
-      <table class="table table-striped">
-          <tr>
-              <th>ID</th>
-              <th>タイトル</th>
-              <th>アクション</th>
-          </tr>
+    <div class="container">
 
-          <%  @posts.each do |post| %>
+        <!-- content -->
+        <div class="row"> 
+            <%= render '/jobs/menu' %>
 
+            <div class="col-md-9">
+                <h2> お知らせ一覧</h2>
 
-            <tr>
-                <td><%= post.id  %></td>
-                <td><%= link_to post.title, post_path(post), :method=> :get  %></td>
+                <p><%= link_to '新規追加', new_post_path, :method=>:get , class: "btn btn-default" %></p>
 
-                
-                <td> 
-                      <%= link_to '編集',edit_post_path(post), :method=> :get ,class: "btn btn-default" %>
-                        <%= link_to '削除',post_path(post), :method=> :delete, data:{confirm: '本当に削除してよろしいですか?'} , class: "btn btn-danger" %>
-                      
-                    </td>
-                </tr>
+                  <table class="table table-striped">
+                      <tr>
+                          <th>ID</th>
+                          <th>タイトル</th>
+                          <th>アクション</th>
+                      </tr>
 
-              <% end %>
+                      <%  @posts.each do |post| %>
 
 
-          </table>
-      </div>
+                        <tr>
+                            <td><%= post.id  %></td>
+                            <td><%= link_to post.title, post_path(post), :method=> :get  %></td>
 
-      </div>
-      </div>
+
+                            <td> 
+                                <%= link_to '編集',edit_post_path(post), :method=> :get ,class: "btn btn-default" %>
+                                  <%= link_to '削除',post_path(post), :method=> :delete, data:{confirm: '本当に削除してよろしいですか?'} , class: "btn btn-danger" %>
+
+                                </td>
+                            </tr>
+
+                          <% end %>
+
+
+                      </table>
+                  </div>
+
+              </div>
+          </div>
       </div>
 

@@ -1,0 +1,45 @@
+<div class="users index">
+
+    <div class="container">
+
+        <!-- content -->
+        <div class="row"> 
+            <%= render '/jobs/menu' %>
+
+            <div class="col-md-9">
+                <h2> カテゴリ一覧</h2>
+
+                <p><%= link_to '新規追加', new_category_path, :method=>:get , class: "btn btn-default" %></p>
+
+                  <table class="table table-striped">
+                      <tr>
+                          <th>ID</th>
+                          <th>カテゴリ</th>
+                          <th>アクション</th>
+                      </tr>
+
+                      <%  @categories.each do |category| %>
+
+
+                        <tr>
+                            <td><%= category.id  %></td>
+                            <td><%=  category.name  %></td>
+
+
+                            <td> 
+                                <%= link_to '編集',edit_category_path(category), :method=> :get ,class: "btn btn-default" %>
+                                  <%= link_to '削除',category_path(category), :method=> :delete, data:{confirm: '本当に削除してよろしいですか?'} , class: "btn btn-danger" %>
+
+                                </td>
+                            </tr>
+
+                          <% end %>
+
+
+                      </table>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+

@@ -22,7 +22,7 @@
     }
 
     .squere{
-        background-color: gold;
+        background-color: orangered;
         /*透過性*/
         opacity: 0.8;
         padding: 15px 15px;
@@ -97,7 +97,7 @@ padding-right: 0;
   background-image: image-url("block.jpg");
       background-position: center center;
       /*画像を画面に合わせて最小サイズで表示*/
-      background-size: contain;
+      background-size: cover;
     color: #ffffff;
 }
 .media{

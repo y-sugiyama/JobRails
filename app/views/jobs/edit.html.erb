@@ -5,16 +5,16 @@
 
         <!-- content -->
         <div class="row"> 
-<%= render '/jobs/menu' %>
+<%= render 'menu' %>
             <div class="col-md-9">
 
                 <h2>編集画面</h2>
-                <%= simple_form_for(@post, url: post_path(@post), html:{:method=>:patch}) do |f| %>
+                <%= simple_form_for(@job, url: job_path(@job), html:{:method=>:patch}) do |f| %>
 
    
                 
                   <%= f.input :title , label: 'タイトル',error: "タイトルを入力してください" %>
-                  <%= f.input  :body , label: 'お知らせ内容' ,error: '内容を入力してください' %>
+                  <%= f.input  :description , label: '求人内容' ,error: '内容を入力してください' %>
                   <%= f.button :submit,  "更新", class: "btn btn-primary" %>
                   <% end %>
 

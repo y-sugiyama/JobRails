@@ -23,3 +23,11 @@ Post.create(title: 'イベントを開催します', body: '△月△日､◯�
 Post.create(title: 'イベントを開催します', body: '△月△日､◯◯にて◯◯イベントを開催します｡詳細は◯◯から御覧ください｡' ,created_at:'2016-09-02')
 
 
+Category.create(id:'1',name:'Web/システム開発')
+Category.create(id:'2',name:'アプリ開発')
+Category.create(id:'3',name:'運用・保守')
+Category.create(id:'4',name:'デザイン')
+Category.create(id:'5',name:'ゲーム')
+
+     
+     

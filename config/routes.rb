@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
 
+  resources :categories
+  resources :jobs
 #スコープの広いもの（rootとか）は後のほうに定義
   resources :contacts, only: [:new, :thank, :confirm]
   post 'contacts' => 'contacts#confirm'
