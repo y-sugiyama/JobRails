@@ -1,0 +1,25 @@
+<div class="users index">
+
+    <div class="container">
+
+        <!-- content -->
+        <div class="row"> 
+
+            <%= render 'menu' %>
+
+
+            <div class="col-md-9">
+
+                <h2>新規登録画面</h2>
+                <%= simple_form_for(@post, url: posts_path) do |f| %>
+
+                  <%= f.input :title , label: 'タイトル',error: "タイトルを入力してください" %>
+                  <%= f.input  :body , label: 'お知らせ内容' ,error: '内容を入力してください' %>
+
+                  <%= f.button :submit,  "新規登録", class: "btn btn-primary" %>
+                  <% end %>
+
+              </div>
+          </div>
+      </div>
+  </div>

@@ -1,0 +1,23 @@
+
+<div class="row" id="contact">
+    <div class="col-md-6 col-md-offset-3"> 
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading" id="login"><h4><%='お問い合わせ画面'%></h4></div>
+            <div class="panel-body">
+
+                <%= simple_form_for(@contact, url: contacts_path) do |f| %>
+
+                  <%= f.input :name , label: 'タイトル',error: "タイトルを入力してください" %>
+                  <%= f.input  :email , label: 'メールアドレス' ,error: 'メールアドレスを入力してください' %>
+                  <%= f.input  :message , label: 'お問い合わせ内容' ,error: 'お問い合わせ内容を入力してください' %>
+
+                  <%= f.button :submit,  "送信", class: "btn btn-primary" %>
+                  <% end %>
+
+
+
+              </div>
+          </div>
+      </div>
+  </div>

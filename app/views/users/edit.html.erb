@@ -1,0 +1,32 @@
+<%= render 'menu' %>
+<div class="users index">
+
+    <div class="container">
+
+        <!-- content -->
+        <div class="row"> 
+
+            <div class="col-md-9">
+
+                <h2>編集画面</h2>
+                <%= simple_form_for(@user, url: user_path(@user), html:{:method=>:patch}) do |f| %>
+
+   
+                
+                  <%= f.input :email , label: 'メールアドレス',error: "メールアドレスを入力してください" %>
+                  <%= f.input  :password , label: 'パスワード' ,error: 'パスワードを入力してください' %>
+                 
+                  <%= f.input  :password_confirmation ,label: 'パスワード(確認)' ,error: 'パスワード(確認)を入力してください'%>
+                  <%= f.input :role , collection: [["管理者", "admin"], ["ユーザ", "user"]],error: '権限を選択してください'%>
+                  <%= f.button :submit,  "更新", class: "btn btn-primary" %>
+                  <% end %>
+
+
+
+                  <%= link_to "戻る", :back %>
+
+              </div>
+
+          </div>
+      </div>
+  </div>
