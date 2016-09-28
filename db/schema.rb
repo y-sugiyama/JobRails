@@ -29,12 +29,13 @@ ActiveRecord::Schema.define(version: 20160928073320) do
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "categori_id"
+    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "company"
     t.integer  "salary"
     t.string   "area"
+    t.index ["category_id"], name: "index_jobs_on_category_id"
   end
 
   create_table "posts", force: :cascade do |t|

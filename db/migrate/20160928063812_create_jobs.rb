@@ -3,7 +3,9 @@ class CreateJobs < ActiveRecord::Migration[5.0]
     create_table :jobs do |t|
       t.string :title
       t.text :description
-      t.integer :categori_id
+      t.integer :category_id
+      
+       t.belongs_to :category
 
       t.timestamps
     end

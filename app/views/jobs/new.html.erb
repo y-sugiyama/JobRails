@@ -15,6 +15,7 @@
 
                   <%= f.input :title , label: 'タイトル',error: "タイトルを入力してください" %>
                 <%= f.input :company , label: '会社名',error: "会社名を入力してください" %>
+                <%= f.input :category, :collection => @categories, :label_method => :name, :value_method => :id, :label => "カテゴリ", :include_blank=>false  %>
                   <%= f.input  :description , label: '求人内容' ,error: '内容を入力してください' %>
                 <%= f.input :salary , label: '給与',error: "給与を入力してください" %>
                 <%= f.input :area , label: 'エリア' , collection: ["東京都", "神奈川県", "埼玉県","千葉県"],error: "エリアを入力してください" %>
