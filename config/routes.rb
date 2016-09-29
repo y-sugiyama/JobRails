@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
  
 
-  resources :entries
+  resources :entries, only: [:new, :thanks, :confirm, :show, :index]
+  post 'entries' => 'entries#confirm'
+  get 'entries/confirm' => 'entries#confirm'
+  post 'entries/thanks' => 'entries#thanks'
+  
   resources :categories
   resources :jobs
 #スコープの広いもの（rootとか）は後のほうに定義

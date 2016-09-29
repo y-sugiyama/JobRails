@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show]
+  before_action :set_job, only: [:show]
 
   # GET /entries
   # GET /entries.json
@@ -12,30 +12,36 @@ class EntriesController < ApplicationController
   # GET /entries/1
   # GET /entries/1.json
   def show
+    @category = @job.category
   end
 
   # GET /entries/new
   def new
     @entry = Entry.new
   end
-
-  # GET /entries/1/edit
   
-
-  # POST /entries
-  # POST /entries.json
-  def create
-    @entry = Entry.new(entry_params)
-
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render :show, status: :created, location: @entry }
-      else
-        format.html { render :new }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+  def confirm
+  @entry = Entry.new(entry_params)
+  
+     if @entry.valid?
+       session[:entry] = @entry
+      render :confirm
+    else
+      render :new
     end
+  end
+  
+  def thanks
+     @entry = Entry.new(session[:entry])
+        
+    
+    if @entry.save
+       MailSenderMailer.send_mail(@entry).deliver
+      session[:entry] = nil
+      redirect_to entries_path, notice:'エントリーが完了しました'
+    else
+      render :new
+    end 
   end
 
  
@@ -43,8 +49,8 @@ class EntriesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_entry
-      @entry = Entry.find(params[:id])
+    def set_job
+      @job = Job.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

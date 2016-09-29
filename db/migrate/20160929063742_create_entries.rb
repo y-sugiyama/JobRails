@@ -4,7 +4,7 @@ class CreateEntries < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.integer :age
-      t.integer :tel
+      t.string :tel
       t.string :address
       t.string :subject
       t.text :body

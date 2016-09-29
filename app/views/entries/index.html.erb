@@ -14,6 +14,7 @@
                 <h6> <%= link_to job.created_at  %></h6>
                 <h3><%= link_to job.title %> </h3>
                 <p> <%= link_to job.description  %></p>
+<p><%= link_to 'もっと見る>>', entry_path(job), :method=> :get  %></p>
 
      
             </div>

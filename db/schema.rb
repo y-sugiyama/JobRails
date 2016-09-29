@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160929063742) do
     t.string   "name"
     t.string   "email"
     t.integer  "age"
-    t.integer  "tel"
+    t.string   "tel"
     t.string   "address"
     t.string   "subject"
     t.text     "body"

@@ -16,7 +16,7 @@ Ruby on Rails5 で作成してます。
 
 ```
 $ git clone https://github.com/y-sugiyama/JobRails.git
-$ cd SiteRails
+$ cd JobRails
 $ bundle install --path=vendor/bundle
 ```
 
