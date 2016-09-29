@@ -10,8 +10,9 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    #@job = Category.job
-   @categories = Job.categories
+    #@belongs_to category としてるのでjobインスタンスはcategoryメソッドをもつようになる
+    #job.categoryでjobに関連するcategoryインスタンスを取得できる
+   @category = @job.category
   end
 
   # GET /jobs/new
@@ -27,6 +28,9 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+     #@belongs_to category としてるのでjobインスタンスはcategoryメソッドをもつようになる
+    #job.categoryでjobに関連するcategoryインスタンスを取得できる
+    @category = @job.category
 
     if @job.save
        redirect_to jobs_path, notice: '求人の新規登録が完了しました.' 
@@ -65,6 +69,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :company,:salary,:area)
+      params.require(:job).permit(:title, :description, :company,:salary,:area,:category_id,:name,:id)
     end
 end

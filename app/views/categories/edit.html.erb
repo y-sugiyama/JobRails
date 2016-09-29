@@ -1,6 +1,28 @@
-<h1>Editing Category</h1>
 
-<%= render 'form', category: @category %>
+<div class="users index">
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+    <div class="container">
+
+        <!-- content -->
+        <div class="row"> 
+<%= render 'jobs/menu' %>
+            <div class="col-md-9">
+
+                <h2>編集画面</h2>
+                <%= simple_form_for(@category, url: category_path(@category), html:{:method=>:patch}) do |f| %>
+
+   
+                
+                  <%= f.input  :name , label: 'カテゴリ名' ,error: 'カテゴリ名を入力してください' %>
+                  <%= f.button :submit,  "更新", class: "btn btn-primary" %>
+                  <% end %>
+
+
+
+                  <%= link_to "戻る", :back %>
+
+              </div>
+
+          </div>
+      </div>
+  </div>

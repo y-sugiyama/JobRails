@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
 
+  resources :entries
   resources :categories
   resources :jobs
 #スコープの広いもの（rootとか）は後のほうに定義
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
   get'/about' => 'pages#about'
   get'/access' => 'pages#access'
    get'/news' => 'pages#news'
-  
+   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

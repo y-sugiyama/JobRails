@@ -1,5 +1,24 @@
-<h1>New Category</h1>
+<div class="users index">
 
-<%= render 'form', category: @category %>
+    <div class="container">
 
-<%= link_to 'Back', categories_path %>
+        <!-- content -->
+        <div class="row"> 
+
+            <%= render 'jobs/menu' %>
+
+
+            <div class="col-md-9">
+
+                <h2>新規登録画面</h2>
+                <%= simple_form_for(@category, url: categories_path) do |f| %>
+
+               
+                <%= f.input :name , label: 'カテゴリ名',error: "カテゴリ名を入力してください" %>
+                 <%= f.button :submit,  "新規登録", class: "btn btn-primary" %>
+                  <% end %>
+
+              </div>
+          </div>
+      </div>
+  </div>
