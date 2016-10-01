@@ -1,0 +1,48 @@
+<div class="container">  
+
+    <div class="row" id="jobsview">
+        <div class="col-md-9">
+            <h2>求人詳細</h2>
+
+
+
+            <table class="table table-bordered">  
+                <tr>
+                    <th>Id</th>
+                    <td><%= @job.id %></td>
+                </tr>
+                <tr>
+                    <th>タイトル</th>
+                    <td><%= @job.title %></td>
+                </tr>
+                <tr>
+                    <th>カテゴリ</th>
+                    <td><%= @category.name %></td>
+                </tr>
+                <tr>
+                    <th>会社名</th>
+                    <td><%= @job.company %></td>
+                </tr>
+                <tr>
+                    <th>給与</th>
+                    <td><%= @job.salary %>万円</td>
+                </tr>
+                <tr>
+                    <th>エリア</th>
+                    <td><%= @job.area %></td>
+                </tr>
+                <tr>
+                    <th>求人内容</th>
+                    <td><%= @job.description %></td>
+                </tr>
+
+            </table>
+
+
+            <p><%= link_to 'エントリーする', new_entry_path, :method=> :get ,class: "btn btn-primary" %></p>
+
+            <%= link_to 'Back', entries_path %>
+
+          </div>
+      </div>
+  </div>

@@ -1,11 +1,11 @@
 
-# SiteRails
+# JobRails
 
 ## 概要
-コーポレートサイトの雛形になるようなプロジェクトです。
+求人サイトの雛形になるようなプロジェクトです。
 Ruby on Rails5 で作成してます。
 
-![概要](https://raw.githubusercontent.com/y-sugiyama/SiteRails/master/app/assets/images/siterails.png)
+![概要](https://raw.githubusercontent.com/y-sugiyama/JobRails/master/app/assets/images/jobrails.png)
 
 ## 要件
 
@@ -15,8 +15,8 @@ Ruby on Rails5 で作成してます。
 ## インストール方法
 
 ```
-$ git clone https://github.com/y-sugiyama/SiteRails.git
-$ cd SiteRails
+$ git clone https://github.com/y-sugiyama/JobRails.git
+$ cd JobRails
 $ bundle install --path=vendor/bundle
 ```
 

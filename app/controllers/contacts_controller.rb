@@ -20,10 +20,7 @@ class ContactsController < ApplicationController
   
   def thanks
      
-   
      @contact = Contact.new(session[:contact])
-        #メールインスタンス生成用のメーラークラス.クラスメソッド.deliverメソッド→メール送信
-   
     
     if @contact.save
        MailSenderMailer.inquiry(@contact).deliver

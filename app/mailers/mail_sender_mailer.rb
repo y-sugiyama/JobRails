@@ -10,4 +10,10 @@ class MailSenderMailer < ApplicationMailer
 
     mail to: "sustainable.future55@gmail.com"
   end
+  
+   def send_mail(entry)
+    @entry = entry
+
+    mail to: "sustainable.future55@gmail.com"
+  end
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SiteRails</title>
+        <title>JobRails</title>
         <%= csrf_meta_tags %>
 <%#*CSSを読み込むタグを生成します%>
         <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track' => true %>
@@ -26,7 +26,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/top">SiteRails</a>
+                        <a class="navbar-brand" href="/top">JobRails</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,6 +37,7 @@
                             <li><%=link_to 'このサイトについて', about_path %></li>
                             <li><%=link_to 'アクセス', access_path %></li>
                             <li><%=link_to 'お知らせ', news_path %></li>
+                            <li><%=link_to '求人一覧', entries_path %></li>
                             <li><%=link_to 'お問合せ', new_contact_path %></li>
 
                         </ul>

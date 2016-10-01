@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>求人詳細</h2>
+
+    <table class="table table-bordered">  
+        <tr>   
+            <th>Id</th>
+            <th>タイトル</th>
+            <th>カテゴリ</th>
+            <th>会社名</th>
+            <th>求人内容</th>
+            <th>給与</th>
+            <th>エリア</th>
+        </tr>
+        <tr>
+            <td><%= @job.id %></td>
+            <td><%= @job.title %></td>
+            <td><%= @category.name %></td>
+            <td><%= @job.company %></td>
+            
+            <td><%= @job.description %></td>
+            <td><%= @job.salary %>万円</td>
+            <td><%= @job.area %></td>
+        </tr>
+    </table>
+
+
+
+    <%= link_to 'Edit', edit_job_path(@job) %> |
+    <%= link_to 'Back', jobs_path %>
+
+</div>

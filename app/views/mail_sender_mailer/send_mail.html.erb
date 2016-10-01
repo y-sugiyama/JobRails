@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+<h1>Webサイトからお問い合わせがありました。</h1>
+  
+<p>Name: <%= @entry.name %></p>
+<p>Email: <%= @entry.email %></p>
+<p>Age: <%= @entry.age %></p>
+<p>TEL: <%= @entry.tel %></p>
+<p>ADDRESS: <%= @entry.address %></p>
+<p>TITLE: <%= @entry.subject %></p>
+<p>Message:
+<%= @entry.body %></p>
+--------------------------
+
+  </body>
+</html>

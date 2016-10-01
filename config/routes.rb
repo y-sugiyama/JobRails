@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
  
 
+  resources :entries, only: [:new, :thanks, :confirm, :show, :index]
+  post 'entries/search' => 'entries#index'
+  post 'entries' => 'entries#confirm'
+  get 'entries/confirm' => 'entries#confirm'
+  post 'entries/thanks' => 'entries#thanks'
+  
+  
+  resources :categories
+  resources :jobs
 #スコープの広いもの（rootとか）は後のほうに定義
   resources :contacts, only: [:new, :thank, :confirm]
   post 'contacts' => 'contacts#confirm'
@@ -23,7 +32,7 @@ Rails.application.routes.draw do
   get'/about' => 'pages#about'
   get'/access' => 'pages#access'
    get'/news' => 'pages#news'
-  
+   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

@@ -1,0 +1,59 @@
+// Place all the styles related to the Entries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.categoryview h5{
+    display: inline;
+    margin-top:-10px; 
+    padding: 5px 5px 5px 5px;
+}
+
+
+
+#projects{
+    /*背景色を透明に*/
+    background-color:  transparent;
+    margin-top: 10px;
+
+}
+
+#projects h3{
+    text-align: center;
+}
+#projects h6{
+    text-align: center;
+    background-color: pink;
+}
+
+#projects h5{
+    text-align: right;
+    float: right;
+    background-color: green;
+    display: inline;
+    color: white;
+    margin-top:20px; 
+    margin-right: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
+.thumbnail{
+    padding-top:10px;
+    height: 200px;
+}
+
+#jobsearch.col-md-3{
+    display: inline-block;
+    float: right;  
+    text-align: right;
+    margin-top: -30px;
+    margin-right: 10px; 
+}
+#jobsearch.form-group{
+    display: inline-block;
+    text-align: left;
+
+}
+.btn.btn-primary{
+    display: inline-block;
+    float: right;   
+}

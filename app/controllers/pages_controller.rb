@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
   
   def news
-    @posts = Post.all
+    #@posts = Post.all
     
     @posts = Post.order(:created_at).page(params[:page])
   end
