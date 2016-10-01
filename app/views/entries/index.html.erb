@@ -5,23 +5,57 @@
         <p class="lead">  </div>
 </div>
 <div class="container">  
+    <div class="categoryview" >
+        <h4>カテゴリ一覧</h4>
+        <%  @categories.each do |category| %>
+  <%# category = job.category %>
+          <h5>
+              <%= link_to category.name, entries_path(:category_id=>category.id), class: "btn btn-success" %>
 
-<div class="row">
-      <%  @jobs.each do |job| %>
-        <div class="col-sm-6 col-md-4" id="news">
-            <div class="thumbnail">
-                
-                <h6> <%= link_to job.created_at  %></h6>
-                <h3><%= link_to job.title %> </h3>
-                <p> <%= link_to job.description  %></p>
-<p><%= link_to 'もっと見る>>', entry_path(job), :method=> :get  %></p>
+    <%#= link_to category.name, entries_path(:category_id=>job.category_id), class: "btn btn-success" %>
+            </h5>
+          <% end  %>
+      </div>
 
-     
+      <div class="row" id="jobs">
+          <div class="col-md-3" id="jobsearch"> 
+
+              <%= form_tag( entries_search_path) do |f| %>
+
+                <div class="form-group" id="jobsearch">
+                    <%= 'キーワード' %>
+                    <%= text_field_tag :search  %>
+                    <%= submit_tag "検索", class: "btn btn-primary" %>
+
+                  </div>
+                <% end  %>
+
+
             </div>
         </div>
-    <% end %>
-</div>
 
-<%= paginate @jobs %>
-    
-</div>
+
+        <div class="row">
+
+            <%  @jobs.each do |job| %>
+
+
+              <div class="col-sm-6 col-md-4" id="projects">
+                  <div class="thumbnail" id="projects">
+
+                      <h6> <%=  job.created_at  %></h6>
+                      <h3><%=  job.title %> </h3>
+                      <p> <%=  job.description  %></p>
+                      <% category = job.category %>
+                      <h5><%=  category.name %> </h5>
+                      <p><%= link_to 'もっと見る>>', entry_path(job), :method=> :get  %></p>
+
+
+                  </div>
+              </div>
+            <% end %>
+        </div>
+
+        <%= paginate @jobs %>
+
+    </div>
