@@ -5,6 +5,9 @@
 求人サイトの雛形になるようなプロジェクトです。
 Ruby on Rails5 で作成してます。
 
+[★デモページはこちら★](https://jobrails.herokuapp.com/top)
+
+
 ![概要](https://raw.githubusercontent.com/y-sugiyama/JobRails/master/app/assets/images/jobrails.png)
 
 ## 要件
